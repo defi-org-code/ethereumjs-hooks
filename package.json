@@ -1,0 +1,17 @@
+{
+  "name": "ethereumjs-jump-blocks",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defi-org-code/ethereumjs-jump-blocks.git"
+  },
+  "author": "Orbs",
+  "license": "MIT",
+  "dependencies": {
+    "@ethereumjs/vm": "^5.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": ""
+  }
+}
