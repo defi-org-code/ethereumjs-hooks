@@ -21,11 +21,9 @@ instead of mining blocks one by one.
 Useful for testing contract states that depend on blocknumber far in the future (for example Compound.finance).
 
 ```javascript
-  import { jumpBlocks } from "ethereumjs-hooks";
-
   expect(await someContract.methods.getBlockNumber().call()).to.eq(123);
 
-  jumpBlocks(100000);
+  require("ethereumjs-hooks").jumpBlocks(100000);
 
   expect(await someContract.methods.getBlockNumber().call()).to.eq(100123);
 ```
