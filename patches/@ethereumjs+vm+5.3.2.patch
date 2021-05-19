@@ -1,0 +1,17 @@
+diff --git a/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js b/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
+index a13099d..21a93ca 100644
+--- a/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
++++ b/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
+@@ -581,7 +581,11 @@ exports.handlers = new Map([
+     [
+         0x43,
+         function (runState) {
+-            runState.stack.push(runState.eei.getBlockNumber());
++			if (global.EVM_HOOKS_JUMP_BLOCKS) {
++			    runState.stack.push(runState.eei.getBlockNumber().add(global.EVM_HOOKS_JUMP_BLOCKS));
++			} else {
++			    runState.stack.push(runState.eei.getBlockNumber());
++			}
+         },
+     ],
+     // 0x44: DIFFICULTY

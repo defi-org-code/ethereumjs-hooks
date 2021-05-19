@@ -1,17 +1,21 @@
 {
-  "name": "ethereumjs-jump-blocks",
+  "name": "ethereumjs-hooks",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/defi-org-code/ethereumjs-jump-blocks.git"
+    "url": "git+https://github.com/defi-org-code/ethereumjs-hooks.git"
   },
   "author": "Orbs",
   "license": "MIT",
   "dependencies": {
-    "@ethereumjs/vm": "^5.3.2"
+    "@ethereumjs/vm": "^5.3.2",
+    "patch-package": "^6.4.7"
   },
-  "devDependencies": {},
-  "scripts": {
-    "postinstall": ""
-  }
+  "peerDependencies": {
+    "bn.js": "*"
+  },
+  "bin": {
+    "ethereumjs-hooks": "onpostinstall.sh"
+  },
+  "main": "index.js"
 }
