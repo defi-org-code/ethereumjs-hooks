@@ -6,6 +6,10 @@ Test utilities that hook into ethereumjs evm.
 ## Installation
 in `package.json`:
 ```json
+"devDependencies": {
+  "ethereumjs-hooks": "git+https://github.com/defi-org-code/ethereumjs-hooks.git"
+}
+...
 "scripts": {
   "postinstall": "ethereumjs-hooks" 
 }
