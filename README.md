@@ -20,12 +20,12 @@ Will just add the `number` of blocks to evm `blocknumber` (`0x43`) opcode handli
 instead of mining blocks one by one.
 Useful for testing contract states that depend on blocknumber far in the future (for example Compound.finance).
 
-```javascript
-  const currentBlockNumber = await web3.eth.getBlockNumber();
+```typescript
+  import { jumpBlocks } from "ethereumjs-hooks";
 
-  const jumpBy = 100000;
+  const currentBlockNumber = await someContract.methods.getBlockNumber().call(); // solidity 'block.number'
 
-  require("ethereumjs-hooks").jumpBlocks(jumpBy);
+  jumpBlocks(100000);
 
-  expect(await web3.eth.getBlockNumber()).to.eq(currentBlockNumber + jumpBy);
+  await someContract.methods.getBlockNumber().call(); // currentBlockNumber + 100,000 
 ```
