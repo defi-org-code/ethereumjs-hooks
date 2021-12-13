@@ -20,6 +20,7 @@
     "bn.js": "4.x"
   },
   "scripts": {
-    "patch": "patch-package @ethereumjs/vm"
+    "patch": "patch-package @ethereumjs/vm",
+    "repatch":"patch-package --reverse; patch-package; patch-package @ethereumjs/vm"
   }
 }

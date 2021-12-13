@@ -1,5 +1,5 @@
 diff --git a/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js b/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
-index 36c0d27..732debb 100644
+index 871c8ce..78b702a 100644
 --- a/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
 +++ b/node_modules/@ethereumjs/vm/dist/evm/opcodes/functions.js
 @@ -589,7 +589,11 @@ exports.handlers = new Map([
