@@ -20,16 +20,24 @@ in `package.json`:
 
 ## evmJumpBlocks(number, fn)
 
-Will just add the `number` of blocks to evm `blocknumber` (`0x43`) opcode handling,
-instead of mining blocks one by one.
+Modifies EVM opcode `0x43` (`block.number`) to return `block.number + n`. Does not affect web3, only solidity/evm runtime.
+
+Effect remains globally until `evmJumpBlocks(0)` is called.
+
 Useful for testing contract states that depend on blocknumber far in the future (for example Compound.finance).
+
+Usage example:
 
 ```typescript
 import { evmJumpBlocks } from "@defi.org/ethereumjs-hooks";
 
-const currentBlockNumber = await someContract.methods.getBlockNumber().call(); // solidity 'block.number'
+afterEach(() => evmJumpBlocks(0));
 
-await evmJumpBlocks(100_000, async () => {
+it(async () => {
+  const currentBlockNumber = await someContract.methods.getBlockNumber().call(); // solidity 'block.number'
+
+  evmJumpBlocks(100_000);
+
   await someContract.methods.getBlockNumber().call(); // currentBlockNumber + 100,000
 });
 ```
