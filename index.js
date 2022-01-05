@@ -7,7 +7,7 @@ module.exports = {
    * @param n number of n to
    * @param fn the function to execute, during which `block.number` will return `block.number + n`
    */
-  jumpEvmBlocks: (n, fn) => {
+  evmJumpBlocks: (n, fn) => {
     try {
       global["EVM_HOOKS_JUMP_BLOCKS"] = new BN(n);
       return fn();

@@ -5,5 +5,5 @@ declare module "ethereumjs-hooks" {
    * @param n number of n to
    * @param fn the function to execute, during which `block.number` will return `block.number + n`
    */
-  export function jumpEvmBlocks<T>(n: number, fn: () => T): T;
+  export function evmJumpBlocks<T>(n: number, fn: () => T): T;
 }
