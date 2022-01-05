@@ -1,10 +1,9 @@
 declare module "ethereumjs-hooks" {
-    /**
-     * Will artificially add the blocks number to evm `blocknumber` (0x43) opcode handling,
-     * instead of mining blocks one by one.
-     * Useful for testing contract states that depend on blocknumber far in the future (for example Compound.finance).
-     *
-     * @param blocks : number - blocks to jump
-     */
-    export function jumpBlocks(blocks: number);
+  /**
+   * Modifies EVM opcode 0x43 (block.number) to return `block.number + n`. Does not affect web3, only solidity/evm runtime during execution of `fn`.
+   *
+   * @param n number of n to
+   * @param fn the function to execute, during which `block.number` will return `block.number + n`
+   */
+  export function jumpEvmBlocks<T>(n: number, fn: () => T): T;
 }

@@ -1,11 +1,12 @@
 {
-  "name": "ethereumjs-hooks",
-  "version": "1.0.0",
+  "name": "@defi.org/ethereumjs-hooks",
+  "version": "0.1.0",
+  "description": "ethereumjs hooks",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/defi-org-code/ethereumjs-hooks.git"
   },
-  "author": "Orbs",
+  "author": "defi.org",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
@@ -17,10 +18,16 @@
   },
   "peerDependencies": {
     "@ethereumjs/vm": "5.x",
-    "bn.js": "4.x"
+    "bn.js": "x"
+  },
+  "devDependencies": {
+    "prettier": "2.x"
   },
   "scripts": {
     "patch": "patch-package @ethereumjs/vm",
-    "repatch":"patch-package --reverse; patch-package; patch-package @ethereumjs/vm"
+    "repatch": "patch-package --reverse; patch-package; patch-package @ethereumjs/vm"
+  },
+  "prettier": {
+    "printWidth": 180
   }
 }
