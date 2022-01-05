@@ -25,7 +25,8 @@
   },
   "scripts": {
     "patch": "patch-package @ethereumjs/vm",
-    "repatch": "patch-package --reverse; patch-package; patch-package @ethereumjs/vm"
+    "repatch": "patch-package --reverse; patch-package; patch-package @ethereumjs/vm",
+    "upload": "npm publish --access public"
   },
   "prettier": {
     "printWidth": 180
